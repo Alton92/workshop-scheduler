@@ -1,0 +1,384 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.app-container {
+    max-width: 95%; 
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+.controls {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+#addJobForm div,
+#addLeaveForm div, 
+#editJobForm div { 
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#addJobForm label,
+#addLeaveForm label,
+#editJobForm label {
+    width: 150px; 
+    margin-right: 10px;
+    flex-shrink: 0; 
+}
+
+#addJobForm input[type="text"],
+#addJobForm input[type="date"],
+#addJobForm input[type="number"],
+#addJobForm select,
+#addLeaveForm input[type="text"], 
+#addLeaveForm input[type="date"],
+#addLeaveForm select,
+#editJobForm input[type="text"],
+#editJobForm input[type="date"],
+#editJobForm input[type="number"],
+#editJobForm select {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#addJobForm button,
+#addLeaveForm button { 
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+}
+#addJobForm button {
+    background-color: #3498db;
+}
+#addJobForm button:hover {
+    background-color: #2980b9;
+}
+#addLeaveForm button {
+    background-color: #95a5a6;
+}
+#addLeaveForm button:hover {
+    background-color: #7f8c8d;
+}
+
+.gantt-chart-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.chart-period-title-container {
+    text-align: center;
+    margin-bottom: 10px; 
+}
+.chart-focus-title {
+    font-size: 1.3em; 
+    font-weight: bold;
+    color: #333;
+}
+
+.timeline-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px 0; 
+}
+
+#prevPeriodBtn, #nextPeriodBtn {
+    background: none; 
+    border: none;     
+    color: #007bff;   
+    font-weight: bold;
+    font-size: 1.02em; 
+    cursor: pointer;
+    padding: 5px 8px; 
+    margin: 0 5px; 
+}
+
+#prevPeriodBtn:hover, #nextPeriodBtn:hover {
+    text-decoration: underline;
+    color: #0056b3; 
+}
+
+#currentPeriodSpan { 
+    font-weight: bold;
+    font-size: 1.1em; 
+    text-align: center;
+    flex-grow: 1; 
+}
+
+.gantt-chart {
+    border: 1px solid #ccc;
+    display: grid;
+}
+
+.gantt-header {
+    display: contents;
+}
+
+.gantt-row-header, .gantt-day-header {
+    background-color: #e0e0e0;
+    padding: 10px 0px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.85em;
+    min-width: 50px; 
+    box-sizing: border-box;
+}
+
+.gantt-row-header { 
+    position: sticky;
+    left: 0;
+    z-index: 10; 
+    background-color: #dde;
+    min-width: 130px; 
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.gantt-timeline-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: #e0e0e0; 
+    z-index: 20; 
+}
+
+.gantt-day-sunday { 
+    background-color: #f8d7da; 
+    color: #721c24;
+}
+
+.gantt-body {
+    display: contents;
+}
+
+.gantt-worker-row {
+    display: contents;
+}
+
+.gantt-worker-name {
+    padding: 10px 5px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    background-color: #eef; 
+    font-size: 0.9em;
+    position: sticky;
+    left: 0;
+    z-index: 5; 
+}
+
+.gantt-cells {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    position: relative; 
+}
+
+.gantt-cell {
+    flex: 0 0 50px; 
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    min-height: 40px; 
+    position: relative;
+}
+.gantt-cell:last-child {
+    border-right: none;
+}
+
+.gantt-cell-sunday { 
+    background-color: #fff3f3; 
+}
+
+.task-bar {
+    position: absolute;
+    height: 75%; 
+    top: 12.5%;   
+    color: #333; 
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden; 
+    white-space: normal; 
+    word-break: break-word; 
+    font-size: 0.8em;
+    padding: 2px 6px; 
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    text-align: center;    
+    line-height: 1.2; 
+    user-select: none; /* Prevent text selection during drag */
+    cursor: grab;      /* Default cursor, JS changes it for resize zones */
+    z-index: 1;
+    outline-style: solid; 
+    outline-offset: -2px; 
+    outline-width: 3px;  
+    /* outline-color & background-color are set by JS */
+}
+
+.task-bar.dragging { /* Class added by JS during any drag operation */
+    opacity: 0.7;
+    z-index: 20; /* Ensure it's on top while dragging */
+    /* cursor: grabbing; /* This will be set on document.body by JS */
+}
+
+.task-bar:hover { /* This applies when not dragging */
+    /* z-index: 15; No longer needed here as dragging class handles higher z-index */
+    /* transform: scale(1.02); /* This can be kept if desired for non-drag hover */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3), 0 0 10px var(--hover-glow-color, rgba(255,255,255,0.5)); 
+}
+
+
+.leave-bar {
+    position: absolute;
+    height: 50%; 
+    top: 25%;   
+    background-color: #7f8c8d; 
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255,255,255,0.2) 10px,
+        rgba(255,255,255,0.2) 20px
+    ); 
+    color: white;
+    border-radius: 3px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.7em;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    cursor: pointer;
+    z-index: 2; 
+    border: 1px solid #5D6D7E;
+}
+
+.leave-bar:hover {
+    background-color: #566573;
+    opacity: 0.9;
+    z-index: 16; 
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+.close-button, 
+.close-leave-button {
+    color: #aaa;
+    float: right; 
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute; 
+    top: 10px;
+    right: 20px;
+}
+.close-button:hover,
+.close-button:focus,
+.close-leave-button:hover,
+.close-leave-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#editLeaveWorkerDisplay { 
+    background-color: #eee;
+}
+#editJobForm button, 
+#editLeaveForm button {
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 5px; 
+}
+#editJobForm button[type="submit"],
+#editLeaveForm button[type="submit"] {
+    background-color: #2ecc71; 
+}
+#editJobForm button[type="submit"]:hover,
+#editLeaveForm button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+.delete-button { 
+    background-color: #e74c3c; 
+}
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .app-container { max-width: 100%; padding: 10px; }
+    #addJobForm div, #addLeaveForm div, #editJobForm div { flex-direction: column; align-items: stretch; }
+    #addJobForm label, #addLeaveForm label, #editJobForm label { width: auto; margin-bottom: 5px; }
+    .gantt-row-header, .gantt-worker-name { min-width: 100px; font-size: 0.8em; }
+    .gantt-day-header, .gantt-cell { flex: 0 0 40px; min-width: 40px; font-size: 0.75em; }
+    .task-bar { font-size: 0.75em; padding: 1px 4px; line-height: 1.1; }
+    .leave-bar { font-size: 0.6em; }
+    .modal-content { width: 90%; margin: 15% auto; }
+    #prevPeriodBtn, #nextPeriodBtn { font-size: 0.95em; padding: 4px 6px;}
+    #currentPeriodSpan { font-size: 1em; } /* Adjusted from 1.1em to be less dominant than focus title */
+    .chart-focus-title { font-size: 1.1em; } /* Adjusted from 1.3em */
+
+}
+@media (max-width: 480px) {
+    body { padding: 5px; }
+    .app-container { padding: 5px; }
+    .controls { padding: 10px; }
+    .gantt-row-header, .gantt-worker-name { min-width: 80px; font-size: 0.7em; }
+    .gantt-day-header, .gantt-cell { flex: 0 0 35px; min-width: 35px; font-size: 0.7em; }
+    .task-bar { font-size: 0.7em; padding: 1px 3px; line-height: 1.1; }
+    .leave-bar { font-size: 0.5em; height: 55%; top: 22.5%; }
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    #prevPeriodBtn, #nextPeriodBtn { font-size: 0.9em; padding: 3px 5px;}
+    .chart-focus-title { font-size: 0.95em; }
+    #currentPeriodSpan { font-size: 0.9em;}
+}
