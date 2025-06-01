@@ -2,35 +2,72 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: #f8f9fa; 
+    color: #212529; 
+    line-height: 1.5;
 }
 
 .app-container {
-    max-width: 95%; 
+    max-width: 98%;
     margin: auto;
-    background-color: #fff;
+    background-color: #ffffff; 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
-h1, h2 {
-    color: #2c3e50;
+.app-header {
     text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#companyLogo { 
+    max-height: 50px; 
+    max-width: 200px; 
+    margin-bottom: 10px;
+}
+
+.app-header h1 {
+    margin-top: 0; 
+    margin-bottom: 0.25em; 
+    color: #343a40;
+    font-size: 2em;
+}
+
+.company-subtitle {
+    font-size: 1.1em;
+    color: #6c757d; 
+    margin-top: 0.25em;
+    font-weight: normal;
+}
+
+h2 { 
+    color: #343a40; 
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .controls {
-    margin-bottom: 30px;
+    margin-top: 30px; 
     padding: 20px;
-    background-color: #ecf0f1;
-    border-radius: 5px;
+    background-color: #f1f3f5; 
+    border: 1px solid #dee2e6; 
+    border-radius: 6px;
+}
+.controls h2 {
+    margin-top: 0; 
 }
 
 #addJobForm div,
 #addLeaveForm div, 
 #editJobForm div { 
-    margin-bottom: 10px;
+    margin-bottom: 12px; 
     display: flex;
     align-items: center;
 }
@@ -38,9 +75,11 @@ h1, h2 {
 #addJobForm label,
 #addLeaveForm label,
 #editJobForm label {
-    width: 150px; 
+    width: 140px; 
     margin-right: 10px;
     flex-shrink: 0; 
+    color: #495057; 
+    font-size: 0.9em;
 }
 
 #addJobForm input[type="text"],
@@ -55,330 +94,232 @@ h1, h2 {
 #editJobForm input[type="number"],
 #editJobForm select {
     flex-grow: 1;
-    padding: 8px;
-    border: 1px solid #bdc3c7;
+    padding: 9px 12px; 
+    border: 1px solid #ced4da; 
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: #fff;
+    font-size: 0.9em;
 }
 
-#addJobForm button,
-#addLeaveForm button { 
-    padding: 10px 15px;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    margin-top: 10px;
-    width: 100%;
+#addJobForm input[type="text"]:focus,
+#addJobForm input[type="date"]:focus,
+#addJobForm input[type="number"]:focus,
+#addJobForm select:focus,
+#addLeaveForm input[type="text"]:focus, 
+#addLeaveForm input[type="date"]:focus,
+#addLeaveForm select:focus,
+#editJobForm input[type="text"]:focus,
+#editJobForm input[type="date"]:focus,
+#editJobForm input[type="number"]:focus,
+#editJobForm select:focus {
+    border-color: #86b7fe; 
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    outline: none;
 }
+
 #addJobForm button {
-    background-color: #3498db;
+    background-color: #007bff; 
+    border-color: #007bff;
+    padding: 10px 15px; color: white; border-radius: 4px; cursor: pointer;
+    display: block; margin-top: 10px; width: 100%; font-size: 0.95em;
 }
-#addJobForm button:hover {
-    background-color: #2980b9;
-}
-#addLeaveForm button {
-    background-color: #95a5a6;
-}
-#addLeaveForm button:hover {
-    background-color: #7f8c8d;
-}
+#addJobForm button:hover { background-color: #0069d9; border-color: #0062cc; }
 
-.gantt-chart-container {
-    margin-top: 20px;
-    overflow-x: auto;
+#addLeaveForm button { 
+    background-color: #6c757d; 
+    border-color: #6c757d;
+    padding: 10px 15px; color: white; border-radius: 4px; cursor: pointer;
+    display: block; margin-top: 10px; width: 100%; font-size: 0.95em;
 }
+#addLeaveForm button:hover { background-color: #5a6268; border-color: #545b62; }
 
-.chart-period-title-container {
-    text-align: center;
-    margin-bottom: 10px; 
-}
-.chart-focus-title {
-    font-size: 1.3em; 
-    font-weight: bold;
-    color: #333;
-}
+.gantt-chart-container { margin-top: 20px; overflow-x: auto; }
+
+.chart-period-title-container { text-align: center; margin-bottom: 10px; }
+.chart-focus-title { font-size: 1.2em; font-weight: 500; color: #495057; }
 
 .timeline-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 5px 0; 
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 15px; padding: 5px 0; 
 }
 
 #prevPeriodBtn, #nextPeriodBtn {
-    background: none; 
-    border: none;     
-    color: #007bff;   
-    font-weight: bold;
-    font-size: 1.02em; 
-    cursor: pointer;
-    padding: 5px 8px; 
-    margin: 0 5px; 
+    background: none; border: none; color: #007bff;   
+    font-weight: bold; font-size: 0.95em; cursor: pointer;
+    padding: 5px 10px; margin: 0 5px; 
 }
-
 #prevPeriodBtn:hover, #nextPeriodBtn:hover {
-    text-decoration: underline;
-    color: #0056b3; 
+    text-decoration: none; color: #0056b3; 
+    background-color: #e9ecef; border-radius: 4px;
 }
-
 #currentPeriodSpan { 
-    font-weight: bold;
-    font-size: 1.1em; 
-    text-align: center;
-    flex-grow: 1; 
+    font-weight: 500; font-size: 1em; 
+    text-align: center; flex-grow: 1; color: #495057;
 }
 
-.gantt-chart {
-    border: 1px solid #ccc;
-    display: grid;
-}
-
-.gantt-header {
-    display: contents;
-}
+.gantt-chart { border: 1px solid #dee2e6; display: grid; }
+.gantt-header { display: contents; }
 
 .gantt-row-header, .gantt-day-header {
-    background-color: #e0e0e0;
-    padding: 10px 0px;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.85em;
-    min-width: 50px; 
-    box-sizing: border-box;
+    background-color: #f8f9fa; padding: 10px 0px; 
+    border-bottom: 1px solid #dee2e6; border-right: 1px solid #dee2e6;
+    text-align: center; font-weight: 500; font-size: 0.8em; 
+    color: #495057; box-sizing: border-box;
 }
-
 .gantt-row-header { 
-    position: sticky;
-    left: 0;
-    z-index: 10; 
-    background-color: #dde;
-    min-width: 130px; 
-    padding-left: 5px;
-    padding-right: 5px;
+    position: sticky; left: 0; z-index: 10; 
+    background-color: #e9ecef; min-width: 130px; width: 130px; 
+    padding-left: 5px; padding-right: 5px; font-weight: bold; 
 }
-
 .gantt-timeline-header {
-    display: flex;
-    position: sticky;
-    top: 0;
-    background-color: #e0e0e0; 
-    z-index: 20; 
+    display: flex; position: sticky; top: 0;
+    background-color: #f8f9fa; z-index: 20; 
 }
-
-.gantt-day-sunday { 
-    background-color: #f8d7da; 
-    color: #721c24;
-}
-
-.gantt-body {
-    display: contents;
-}
-
-.gantt-worker-row {
-    display: contents;
-}
+.gantt-day-sunday { background-color: #f1f3f5; color: #6c757d; font-weight: normal; }
+.gantt-body { display: contents; }
+.gantt-worker-row { display: contents; } /* This logical row wrapper */
 
 .gantt-worker-name {
     padding: 10px 5px;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    background-color: #eef; 
-    font-size: 0.9em;
-    position: sticky;
-    left: 0;
-    z-index: 5; 
+    border-bottom: 1px solid #dee2e6; border-right: 1px solid #dee2e6;
+    font-size: 0.85em; position: sticky; left: 0; z-index: 5; 
+    width: 130px; min-width: 130px; box-sizing: border-box;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    font-weight: 500;
 }
-
 .gantt-cells {
-    display: flex;
-    border-bottom: 1px solid #ccc;
-    position: relative; 
+    display: flex; border-bottom: 1px solid #dee2e6; position: relative; 
 }
+.gantt-row-even .gantt-worker-name, .gantt-row-even.gantt-cells { background-color: #ffffff; }
+.gantt-row-odd .gantt-worker-name, .gantt-row-odd.gantt-cells { background-color: #f8f9fa; }
 
 .gantt-cell {
-    flex: 0 0 50px; 
-    border-right: 1px solid #ddd;
-    box-sizing: border-box;
-    min-height: 40px; 
-    position: relative;
+    border-right: 1px solid #e9ecef; box-sizing: border-box;
+    min-height: 44px; position: relative;
 }
-.gantt-cell:last-child {
-    border-right: none;
-}
-
-.gantt-cell-sunday { 
-    background-color: #fff3f3; 
-}
+.gantt-cell:last-child { border-right: none; }
+.gantt-cell-sunday { background-color: #f1f3f5 !important; } 
 
 .task-bar {
-    position: absolute;
-    height: 75%; 
-    top: 12.5%;   
-    color: #333; 
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    overflow: hidden; 
-    white-space: normal; 
-    word-break: break-word; 
-    font-size: 0.8em;
-    padding: 2px 6px; 
-    display: flex;
-    align-items: center;   
-    justify-content: center; 
-    text-align: center;    
-    line-height: 1.2; 
-    user-select: none; /* Prevent text selection during drag */
-    cursor: grab;      /* Default cursor, JS changes it for resize zones */
-    z-index: 1;
-    outline-style: solid; 
-    outline-offset: -2px; 
-    outline-width: 3px;  
-    /* outline-color & background-color are set by JS */
+    position: absolute; 
+    height: 70%; top: 15%;   
+    color: #212529; border-radius: 3px; 
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); 
+    overflow: visible;
+    white-space: normal; word-break: break-word; 
+    font-size: 0.75em; padding: 2px 5px; 
+    display: flex; align-items: center; justify-content: center; text-align: center;    
+    line-height: 1.25; user-select: none; cursor: grab;      
+    z-index: 1; outline-style: solid; 
+    outline-offset: -1px; outline-width: 2px;  
+    touch-action: none; 
+}
+.task-bar.dragging { opacity: 0.8; z-index: 20; }
+.task-bar:hover { 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 0 8px var(--hover-glow-color, rgba(0,123,255,0.2)); 
 }
 
-.task-bar.dragging { /* Class added by JS during any drag operation */
-    opacity: 0.7;
-    z-index: 20; /* Ensure it's on top while dragging */
-    /* cursor: grabbing; /* This will be set on document.body by JS */
+.task-bar-ot-indicator {
+    position: absolute; top: 0; height: 100%;
+    background-color: rgba(220, 53, 69, 0.45); color: white; 
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9em; font-weight: bold;
+    box-sizing: border-box; pointer-events: none; 
+    z-index: 1; border-radius: 1px; 
 }
-
-.task-bar:hover { /* This applies when not dragging */
-    /* z-index: 15; No longer needed here as dragging class handles higher z-index */
-    /* transform: scale(1.02); /* This can be kept if desired for non-drag hover */
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3), 0 0 10px var(--hover-glow-color, rgba(255,255,255,0.5)); 
-}
-
 
 .leave-bar {
-    position: absolute;
-    height: 50%; 
-    top: 25%;   
-    background-color: #7f8c8d; 
+    position: absolute; height: 50%; top: 25%;   
+    background-color: #adb5bd; 
     background-image: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(255,255,255,0.2) 10px,
-        rgba(255,255,255,0.2) 20px
+        45deg, transparent, transparent 6px, 
+        rgba(255,255,255,0.15) 6px, rgba(255,255,255,0.15) 12px 
     ); 
-    color: white;
-    border-radius: 3px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 0.7em;
-    padding: 0 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
-    cursor: pointer;
-    z-index: 2; 
-    border: 1px solid #5D6D7E;
+    color: #fff; border-radius: 2px; overflow: hidden;
+    white-space: nowrap; text-overflow: ellipsis;
+    font-size: 0.7em; padding: 0 5px;
+    display: flex; align-items: center; justify-content: flex-start; 
+    cursor: pointer; z-index: 2; border: 1px solid #868e96; 
 }
+.leave-bar:hover { background-color: #868e96; opacity: 0.95; z-index: 16; }
 
-.leave-bar:hover {
-    background-color: #566573;
-    opacity: 0.9;
-    z-index: 16; 
+/* NEW: Style for highlighting a worker row as a potential drop target */
+.worker-row-drop-target.gantt-worker-name, /* Target worker name cell */
+.worker-row-drop-target.gantt-cells {      /* Target cells div */
+    background-color: #cfe2ff !important; /* A light, distinct blue highlight */
+    transition: background-color 0.1s ease-in-out;
 }
 
 .modal {
-    display: none; 
-    position: fixed;
-    z-index: 100; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    display: none; position: fixed; z-index: 1000; 
+    left: 0; top: 0; width: 100%; height: 100%;
+    overflow: auto; background-color: rgba(33,37,41,0.6); 
 }
 .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 8px;
-    position: relative;
+    background-color: #fff; margin: 8% auto; 
+    padding: 25px 30px; border: none; 
+    width: 90%; max-width: 480px; 
+    border-radius: 6px; position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
 }
-.close-button, 
-.close-leave-button {
-    color: #aaa;
-    float: right; 
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute; 
-    top: 10px;
-    right: 20px;
+.modal-content h2 { margin-top: 0; margin-bottom: 20px; font-size: 1.5em; color: #343a40; }
+
+.close-button, .close-leave-button {
+    color: #6c757d; float: right; 
+    font-size: 30px; font-weight: bold;
+    position: absolute; top: 15px; right: 20px;
+    line-height: 0.8; 
 }
-.close-button:hover,
-.close-button:focus,
-.close-leave-button:hover,
-.close-leave-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.close-button:hover, .close-button:focus, .close-leave-button:hover, .close-leave-button:focus {
+    color: #343a40; text-decoration: none; cursor: pointer;
 }
-#editLeaveWorkerDisplay { 
-    background-color: #eee;
+#editLeaveWorkerDisplay { background-color: #e9ecef; }
+
+#editJobForm button, #editLeaveForm button {
+    padding: 10px 15px; color: white; border: none; border-radius: 4px;
+    cursor: pointer; margin-top: 15px; margin-right: 8px; 
+    font-weight: 500; font-size: 0.9em;
 }
-#editJobForm button, 
-#editLeaveForm button {
-    padding: 10px 15px;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-right: 5px; 
+#editJobForm button[type="submit"], #editLeaveForm button[type="submit"] {
+    background-color: #28a745; border-color: #28a745;
 }
-#editJobForm button[type="submit"],
-#editLeaveForm button[type="submit"] {
-    background-color: #2ecc71; 
+#editJobForm button[type="submit"]:hover, #editLeaveForm button[type="submit"]:hover {
+    background-color: #218838; border-color: #1e7e34;
 }
-#editJobForm button[type="submit"]:hover,
-#editLeaveForm button[type="submit"]:hover {
-    background-color: #27ae60;
-}
-.delete-button { 
-    background-color: #e74c3c; 
-}
-.delete-button:hover {
-    background-color: #c0392b;
-}
+.delete-button { background-color: #dc3545; border-color: #dc3545; }
+.delete-button:hover { background-color: #c82333; border-color: #bd2130; }
 
 @media (max-width: 768px) {
-    .app-container { max-width: 100%; padding: 10px; }
+    .app-container { max-width: 100%; padding: 15px 10px; }
     #addJobForm div, #addLeaveForm div, #editJobForm div { flex-direction: column; align-items: stretch; }
-    #addJobForm label, #addLeaveForm label, #editJobForm label { width: auto; margin-bottom: 5px; }
-    .gantt-row-header, .gantt-worker-name { min-width: 100px; font-size: 0.8em; }
-    .gantt-day-header, .gantt-cell { flex: 0 0 40px; min-width: 40px; font-size: 0.75em; }
-    .task-bar { font-size: 0.75em; padding: 1px 4px; line-height: 1.1; }
-    .leave-bar { font-size: 0.6em; }
-    .modal-content { width: 90%; margin: 15% auto; }
-    #prevPeriodBtn, #nextPeriodBtn { font-size: 0.95em; padding: 4px 6px;}
-    #currentPeriodSpan { font-size: 1em; } /* Adjusted from 1.1em to be less dominant than focus title */
-    .chart-focus-title { font-size: 1.1em; } /* Adjusted from 1.3em */
-
+    #addJobForm label, #addLeaveForm label, #editJobForm label { width: auto; margin-bottom: 6px; text-align: left;}
+    .gantt-row-header, .gantt-worker-name { min-width: 90px; width: 90px; font-size: 0.75em; }
+    .task-bar { font-size: 0.7em; padding: 1px 4px; line-height: 1.15; } 
+    .task-bar-ot-indicator { font-size: 0.8em; } 
+    .leave-bar { font-size: 0.65em; }
+    .modal-content { width: 90%; margin: 10% auto; }
+    #prevPeriodBtn, #nextPeriodBtn { font-size: 0.9em; padding: 4px 6px;} 
+    #currentPeriodSpan { font-size: 0.95em; } 
+    .chart-focus-title { font-size: 1.05em; } 
+    .app-header h1 { font-size: 1.6em; }
+    .company-subtitle { font-size: 1em; }
 }
 @media (max-width: 480px) {
-    body { padding: 5px; }
-    .app-container { padding: 5px; }
-    .controls { padding: 10px; }
-    .gantt-row-header, .gantt-worker-name { min-width: 80px; font-size: 0.7em; }
-    .gantt-day-header, .gantt-cell { flex: 0 0 35px; min-width: 35px; font-size: 0.7em; }
-    .task-bar { font-size: 0.7em; padding: 1px 3px; line-height: 1.1; }
-    .leave-bar { font-size: 0.5em; height: 55%; top: 22.5%; }
-    h1 { font-size: 1.3em; }
-    h2 { font-size: 1.1em; }
-    #prevPeriodBtn, #nextPeriodBtn { font-size: 0.9em; padding: 3px 5px;}
-    .chart-focus-title { font-size: 0.95em; }
-    #currentPeriodSpan { font-size: 0.9em;}
+    body { padding: 10px 5px; }
+    .app-container { padding: 10px 5px; }
+    .controls { padding: 15px; }
+    .gantt-row-header, .gantt-worker-name { min-width: 70px; width: 70px; font-size: 0.65em; }
+    .task-bar { font-size: 0.65em; padding: 1px 3px; line-height: 1.1; } 
+    .task-bar-ot-indicator { font-size: 0.75em; }
+    .leave-bar { font-size: 0.6em; height: 50%; top: 25%; }
+    .app-header h1 { font-size: 1.2em; }
+    .company-subtitle { font-size: 0.9em; }
+    h2 {font-size: 1.1em;}
+    #prevPeriodBtn, #nextPeriodBtn { font-size: 0.85em; padding: 3px 5px;}
+    .chart-focus-title { font-size: 0.9em; } 
+    #currentPeriodSpan { font-size: 0.85em;}
+    .modal-content { padding: 20px 15px; }
+    #addJobForm label, #addLeaveForm label, #editJobForm label { font-size: 0.85em;}
+    #addJobForm input, #addJobForm select, #addLeaveForm input, #addLeaveForm select, #editJobForm input, #editJobForm select { font-size: 0.85em; padding: 8px 10px;}
 }
