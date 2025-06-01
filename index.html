@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop Job Scheduler</title>
+    <title>Workshop Job Scheduler - KILANG BESI HIAP SENG</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app-container">
-        <h1>Workshop Job Scheduler</h1>
+        <header class="app-header">      
+		<h1>Workshop Job Scheduler</h1>
+		<img src="images/logo.png" alt="KILANG BESI HIAP SENG Logo" id="companyLogo"> 
+		<p class="company-subtitle">KILANG BESI HIAP SENG | 協成鐵廠</p>
+        </header>
+
+        <div class="gantt-chart-container">
+            <h2>Job Schedule</h2>
+            <div class="chart-period-title-container">
+                <span id="chartFocusTitle" class="chart-focus-title">Month Year</span>
+            </div>
+            
+            <div class="timeline-controls">
+                <button id="prevPeriodBtn" title="Previous 14 Days">&lt; Prev 14 Days</button>
+                <span id="currentPeriodSpan">Date Range</span> 
+                <button id="nextPeriodBtn" title="Next 14 Days">Next 14 Days &gt;</button>
+            </div>
+            <div id="ganttChart" class="gantt-chart">
+                <div class="gantt-header">
+                    <div class="gantt-row-header">Worker</div>
+                    <div class="gantt-timeline-header">
+                        </div>
+                </div>
+                <div class="gantt-body">
+                    </div>
+            </div>
+        </div>
 
         <div class="controls">
             <h2>Add New Job</h2>
@@ -56,28 +82,6 @@
                 </div>
                 <button type="submit">Add Leave</button>
             </form>
-        </div>
-
-        <div class="gantt-chart-container">
-            <h2>Job Schedule</h2>
-            <div class="chart-period-title-container">
-                <span id="chartFocusTitle" class="chart-focus-title">Month Year</span>
-            </div>
-            
-            <div class="timeline-controls">
-                <button id="prevPeriodBtn">&lt; Prev 14 Days</button>
-                <span id="currentPeriodSpan">Date Range</span> 
-                <button id="nextPeriodBtn">Next 14 Days &gt;</button>
-            </div>
-            <div id="ganttChart" class="gantt-chart">
-                <div class="gantt-header">
-                    <div class="gantt-row-header">Worker</div>
-                    <div class="gantt-timeline-header">
-                        </div>
-                </div>
-                <div class="gantt-body">
-                    </div>
-            </div>
         </div>
     </div>
 
